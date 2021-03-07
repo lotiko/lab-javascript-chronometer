@@ -62,13 +62,18 @@ function setResetBtn() {
 
 // Start/Stop Button
 btnLeft.addEventListener("click", () => {
-  const callbackStart = () => {
-    printInt = setInterval(() => {
-      printMinutes();
-      printSeconds();
-    }, 1000);
-  };
-  chronometer.startClick(callbackStart);
+  console.log(btnLeft);
+  if (btnLeft.classList.contains("start")) {
+    btnLeft.className = "btn stop";
+    btnLeft.textContent = "STOP";
+    const callbackStart = () => {
+      printInt = setInterval(() => {
+        printMinutes();
+        printSeconds();
+      }, 1000);
+    };
+    chronometer.startClick(callbackStart);
+  }
 });
 
 // Reset/Split Button

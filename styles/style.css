@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Digi";
-  src: url("fonts/ds-digib.ttf");
+  src: url("fonts/ds-digi.ttf");
 }
 
 body {
@@ -11,15 +11,13 @@ body {
 }
 
 #clock {
-  display: flex;
-  align-items: center;
   border: 2px solid #000;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 15rem;
+  height: 250px;
   margin: 0 auto;
   padding: 18px 0;
-  width: 20rem;
+  width: 245px;
 }
 
 #sphere {
@@ -28,12 +26,12 @@ body {
   box-sizing: border-box;
   font-family: "Digi";
   font-size: 80px;
-  height: 13rem;
+  height: 210px;
   margin: 0 auto;
   padding: 35px 0;
   position: relative;
   text-align: center;
-  width: 18rem;
+  width: 220px;
 }
 
 #splits-container {
@@ -88,7 +86,7 @@ body {
 
 .number {
   display: inline-block;
-  width: 3.2rem;
+  width: 40px;
 }
 
 .btn {
@@ -106,13 +104,11 @@ body {
 .btn.start,
 .btn.stop {
   left: 10px;
-  bottom: 2px;
 }
 
 .btn.reset,
 .btn.split {
   right: 10px;
-  bottom: 2px;
 }
 
 .btn.start {
