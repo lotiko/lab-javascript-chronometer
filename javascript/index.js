@@ -1,28 +1,34 @@
 const chronometer = new Chronometer();
 
 // get the buttons:
-const btnLeft = document.getElementById('btnLeft');
-const btnRight = document.getElementById('btnRight');
+const btnLeft = document.getElementById("btnLeft");
+const btnRight = document.getElementById("btnRight");
 
 // get the DOM elements that will serve us to display the time:
-let minDec = document.getElementById('minDec');
-let minUni = document.getElementById('minUni');
-let secDec = document.getElementById('secDec');
-let secUni = document.getElementById('secUni');
-let milDec = document.getElementById('milDec');
-let milUni = document.getElementById('milUni');
-let splits = document.getElementById('splits');
+let minDec = document.getElementById("minDec");
+let minUni = document.getElementById("minUni");
+let secDec = document.getElementById("secDec");
+let secUni = document.getElementById("secUni");
+let milDec = document.getElementById("milDec");
+let milUni = document.getElementById("milUni");
+let splits = document.getElementById("splits");
 
+// add in file scope intervalId
+let printInt;
 function printTime() {
-  // ... your code goes here
+  printMinutes();
+  printSeconds();
+  printMilliseconds();
 }
 
 function printMinutes() {
-  // ... your code goes here
+  minDec.textContent = chronometer.getMinutesDec();
+  minUni.textContent = chronometer.getMinutesUni();
 }
 
 function printSeconds() {
-  // ... your code goes here
+  secDec.textContent = chronometer.getSecondsDec();
+  secUni.textContent = chronometer.getSecondsUni();
 }
 
 // ==> BONUS
@@ -55,11 +61,17 @@ function setResetBtn() {
 }
 
 // Start/Stop Button
-btnLeft.addEventListener('click', () => {
-  // ... your code goes here
+btnLeft.addEventListener("click", () => {
+  const callbackStart = () => {
+    printInt = setInterval(() => {
+      printMinutes();
+      printSeconds();
+    }, 1000);
+  };
+  chronometer.startClick(callbackStart);
 });
 
 // Reset/Split Button
-btnRight.addEventListener('click', () => {
+btnRight.addEventListener("click", () => {
   // ... your code goes here
 });

@@ -28,12 +28,12 @@ body {
   box-sizing: border-box;
   font-family: "Digi";
   font-size: 80px;
-  height: 14rem;
+  height: 13rem;
   margin: 0 auto;
   padding: 35px 0;
   position: relative;
   text-align: center;
-  width: 19rem;
+  width: 18rem;
 }
 
 #splits-container {
@@ -87,8 +87,8 @@ body {
 }
 
 .number {
-  /* display: inline-block; */
-  width: 40px;
+  display: inline-block;
+  width: 3.2rem;
 }
 
 .btn {
@@ -106,11 +106,13 @@ body {
 .btn.start,
 .btn.stop {
   left: 10px;
+  bottom: 2px;
 }
 
 .btn.reset,
 .btn.split {
   right: 10px;
+  bottom: 2px;
 }
 
 .btn.start {
