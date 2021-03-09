@@ -17,7 +17,6 @@ let splits = document.getElementById("splits");
 function printTime() {
   printMinutes();
   printSeconds();
-  printMilliseconds();
 }
 
 function printMinutes() {
@@ -32,7 +31,8 @@ function printSeconds() {
 
 // ==> BONUS
 function printMilliseconds() {
-  // ... your code goes here
+  milDec.textContent = chronometer.getMilliSecondsDec();
+  milUni.textContent = chronometer.getMilliSecondsUni();
 }
 
 function printSplit() {
@@ -44,7 +44,9 @@ function printSplit() {
 function clearSplits() {
   splits.innerHTML = "";
   chronometer.currentTime = 0;
+  chronometer.milliSeconds = 0;
   printTime();
+  printMilliseconds();
 }
 
 function setStopBtn() {
@@ -74,7 +76,7 @@ btnLeft.addEventListener("click", () => {
     //  et on lance la methode startclick de la class chronometer
     setStopBtn();
     setSplitBtn();
-    chronometer.startClick(printTime);
+    chronometer.startClick(printTime, printMilliseconds);
   } else {
     // si le chronométre tourne et que l'on appui sur le bouton stop alors en change la class et le text de btnLeft btnRigth
     // et on stop le chronométre
