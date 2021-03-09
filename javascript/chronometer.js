@@ -78,7 +78,7 @@ class Chronometer {
    * @returns {number}
    * @memberof Chronometer
    */
-  getMilliSeconds() {
+  getMilliseconds() {
     return this.milliSeconds;
   }
   /**
@@ -86,14 +86,14 @@ class Chronometer {
    * @memberof Chronometer
    */
   getMilliSecondsDec() {
-    return this.twoDigitsNumber(this.getMilliSeconds()).charAt(0);
+    return this.twoDigitsNumber(this.getMilliseconds()).charAt(0);
   }
   /**
    * @returns {string}
    * @memberof Chronometer
    */
   getMilliSecondsUni() {
-    return this.twoDigitsNumber(this.getMilliSeconds()).charAt(1);
+    return this.twoDigitsNumber(this.getMilliseconds()).charAt(1);
   }
   /**
    * @returns {string}
@@ -110,7 +110,7 @@ class Chronometer {
     return {
       minutes: this.twoDigitsNumber(this.getMinutes()),
       seconds: this.twoDigitsNumber(this.getSeconds()),
-      milliSeconds: this.twoDigitsNumber(this.getMilliSeconds()),
+      milliSeconds: this.twoDigitsNumber(this.getMilliseconds()),
     };
   }
   /**
