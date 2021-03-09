@@ -13,34 +13,47 @@ let milDec = document.getElementById("milDec");
 let milUni = document.getElementById("milUni");
 let splits = document.getElementById("splits");
 
-// add in file scope intervalId
+/**
+ * call sub function printTime and printSeconds
+ */
 function printTime() {
   printMinutes();
   printSeconds();
 }
-
+/**
+ * insert in html span of the chronometer the minutes decimal and unity
+ */
 function printMinutes() {
   minDec.textContent = chronometer.getMinutesDec();
   minUni.textContent = chronometer.getMinutesUni();
 }
-
+/**
+ * insert in html span of the chronometer the seconds decimal and unity
+ */
 function printSeconds() {
   secDec.textContent = chronometer.getSecondsDec();
   secUni.textContent = chronometer.getSecondsUni();
 }
 
 // ==> BONUS
+/**
+ * insert in html span of the chronometer the milliSeconds decimal and unity
+ */
 function printMilliseconds() {
   milDec.textContent = chronometer.getMilliSecondsDec();
   milUni.textContent = chronometer.getMilliSecondsUni();
 }
-
+/**
+ * insert in ol element in html a li with currentTime string inside
+ */
 function printSplit() {
   let li = document.createElement("li");
   li.textContent = chronometer.splitClick();
   splits.appendChild(li);
 }
-
+/**
+ * remove all li in ol element and clear time and view
+ */
 function clearSplits() {
   splits.innerHTML = "";
   chronometer.currentTime = 0;
@@ -48,27 +61,36 @@ function clearSplits() {
   printTime();
   printMilliseconds();
 }
-
+/**
+ * change #btnLeft to stop state
+ */
 function setStopBtn() {
   btnLeft.className = "btn stop";
   btnLeft.textContent = "STOP";
 }
-
+/**
+ * change #btnRight to split state
+ */
 function setSplitBtn() {
   btnRight.className = "btn split";
   btnRight.textContent = "SPLIT";
 }
-
+/**
+ * change #btnLeft to start state
+ */
 function setStartBtn() {
   btnLeft.className = "btn start";
   btnLeft.textContent = "START";
 }
-
+/**
+ * change #btnRight to reset state
+ */
 function setResetBtn() {
   btnRight.className = "btn reset";
   btnRight.textContent = "RESET";
 }
 
+////////// EVENTS//////////////////////
 // Start/Stop Button
 btnLeft.addEventListener("click", () => {
   if (btnLeft.className === "btn start") {
